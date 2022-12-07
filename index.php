@@ -1,26 +1,11 @@
 <?php
+require_once __DIR__ . "/models/movie.php";
 
-
-class Movie {
-    public $name;
-    public $duration;
-    public $genre;
-    public $year;
-    public $language;
-    public $description;
-
-    function __construct($name, $genre, $language, $year, $duration, $description) {
-
-        $this->name = $name;
-        $this-> genre = $genre;
-        $this->language = $language;
-        $this->year =$year;
-        $this->duration = $duration;
-        $this->description = $description;
-    }
-}
-
-$forrestGump = new Movie("Forrest Gump", "drama", "english", "1994", "2.25hr", "");
+$forrestGump = new Movie("Forrest Gump", "drama", "english", "1994", "2.25hr", "", "");
 var_dump($forrestGump);
+$theTrumanShow = new Movie("The Truman Show", "comedy", "english", "1998", "1.43hr", "", "");
+var_dump($theTrumanShow);
+$deadpool = new Movie("Deadpool", "action", "english", "2016", "2.05hr", "", "");
+var_dump($deadpool);
 ?>
 
