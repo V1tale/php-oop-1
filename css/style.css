@@ -1,0 +1,26 @@
+main {
+    background-color:rgb(27, 27, 27);
+}
+.container {
+    width:80%;
+    max-width: 1000px;
+    padding: 3rem 0;
+    margin: auto;
+}
+img {
+    width:100%;
+    border: 2px solid white;
+}
+.box {
+    color:white;
+    background-color: rgb(12, 12, 12);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+h2 {
+    font-size: 1.6rem;
+}
+h4 {
+    font-size: 1rem;
+}

@@ -8,9 +8,13 @@ class Movie {
     public $language;
     public $cast;
     public $description;
+    public $cover;
     
+    function getGenre() {
 
-    function __construct( string $name, array $genres, string $language, string $year, string $duration, string $cast, string $description) {
+    }
+
+    function __construct( string $name, array $genres, string $language, string $year, string $duration, string $cover, array $cast, string $description,) {
 
         $this->name = $name;
         $this-> genres = $genres;
@@ -19,7 +23,9 @@ class Movie {
         $this->duration = $duration;
         $this->description = $description;
         $this->cast = $cast;
+        $this->cover =$cover;
     }
 }
+
 
 ?>

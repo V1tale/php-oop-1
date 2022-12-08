@@ -1,18 +1,7 @@
 <?php
 require_once __DIR__ . "/models/movie.php";
+require_once __DIR__ . "/models/details.php";
 
-$genres = [
-    0 =>("drama"),
-    1 =>("comedy"),
-    2 =>("action"),
-    3 =>("superheroes")
-];
-$forrestGump = new Movie("Forrest Gump", $genres, "english", "1994", "2.25hr", "", "");
-var_dump($forrestGump);
-$theTrumanShow = new Movie("The Truman Show", $genres, "english", "1998", "1.43hr", "", "");
-var_dump($theTrumanShow);
-$deadpool = new Movie("Deadpool", $genres, "english", "2016", "2.05hr", "", "");
-var_dump($deadpool);
 ?>
 
 <!DOCTYPE html>
@@ -22,25 +11,53 @@ var_dump($deadpool);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!-- STYLE -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="app">
-        <main>
-            <section>
-                <div class="container">
-                    <ul>
-                        <!-- <?php foreach ($XXXX as $XXXX); { ?>                         
-
-                            <li>
-                                <div class="box">
-                                    </div>
-                                </li>
-                                <?php } ?> -->
-                    </ul>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <?php foreach ($movies as $content) { ?>                         
+                        <div class="col-4">
+                            <div class="box">
+                                <h2><?php echo($content->name);?></h2>
+                                <img src="img/<?php echo($content->cover); ?>.jpg" alt="">
+                                <div class="details">
+                                    <h3>Details:</h3>
+                                    <h4 class="text-secondary">Year: <?php echo($content->year);?></h4>
+                                    <h4 class="text-secondary">Duration: <?php echo($content->duration);?></h4>
+                                    <h4 class="text-secondary">Language: <?php echo($content->language);?></h4>
+                                </div>
+                                    <div class="genre" >
+                                    <h3>Genres: </h3>
+                                    <?php 
+                                    foreach ($content->genres as  $thisGenre) { ?>
+                                        <h4 class="text-secondary"> <?php echo ($thisGenre);?></h4>
+                                        
+                                        <?php } ?>
+                                </div>
+                                <div class="cast">
+                                    <h3>Cast:</h3>
+                                    <?php 
+                                    foreach ($content->cast as  $thisCast) { ?>
+                                        <h4 class="text-secondary"><?php echo ($thisCast);?></h3>
+                                        
+                                        <?php } ?>
+                                </div>
+                                <div class="description">
+                                    <h3>Description:</h3>
+                                    <h4><?php echo($content->description);?></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
                 </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
