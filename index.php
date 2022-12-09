@@ -23,30 +23,32 @@ require_once __DIR__ . "/models/details.php";
                 <div class="row justify-content-center">
                     <?php foreach ($movies as $content) { ?>                         
                         <div class="col-4">
-                            <div class="box">
+                            <div class="box">       
                                 <h2><?php echo($content->name);?></h2>
-                                <img src="img/<?php echo($content->cover); ?>.jpg" alt="">
-                                <div class="details">
-                                    <h3>Details:</h3>
-                                    <h4 class="text-secondary">Year: <?php echo($content->year);?></h4>
-                                    <h4 class="text-secondary">Duration: <?php echo($content->duration);?></h4>
-                                    <h4 class="text-secondary">Language: <?php echo($content->language);?></h4>
-                                </div>
-                                    <div class="genre" >
-                                    <h3>Genres: </h3>
-                                    <?php 
-                                    foreach ($content->genres as  $thisGenre) { ?>
+                                <div class="top d-flex align-items-start">
+                                    <img src="img/<?php echo($content->cover); ?>.jpg" alt="">
+                                    <div class="info">
+                                        <div class="details">
+                                            <h3>Details:</h3>
+                                            <h4 class="text-secondary">Year: <?php echo($content->year);?></h4>
+                                            <h4 class="text-secondary">Duration: <?php echo($content->duration);?></h4>
+                                            <h4 class="text-secondary">Language: <?php echo($content->language);?></h4>
+                                        </div>
+                                        <div class="genre" >
+                                            <h3>Genres: </h3>
+                                            <?php 
+                                        foreach ($content->genres as  $thisGenre) { ?>
                                         <h4 class="text-secondary"> <?php echo ($thisGenre);?></h4>
                                         
                                         <?php } ?>
-                                </div>
-                                <div class="cast">
-                                    <h3>Cast:</h3>
-                                    <?php 
-                                    foreach ($content->cast as  $thisCast) { ?>
-                                        <h4 class="text-secondary"><?php echo ($thisCast);?></h3>
-                                        
-                                        <?php } ?>
+                                        </div>
+                                        <div class="cast">
+                                            <h3>Cast:</h3>
+                                            <?php foreach ($content->cast as  $thisCast) { ?>
+                                            <h4 class="text-secondary"><?php echo ($thisCast);?></h3>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="description">
                                     <h3>Description:</h3>
@@ -54,7 +56,7 @@ require_once __DIR__ . "/models/details.php";
                                 </div>
                             </div>
                         </div>
-                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
         </section>
